@@ -5,7 +5,7 @@ class EquationSolver(ABC):
     """Абстрактный базовый класс для решателей уравнений."""
 
     @abstractmethod
-    def solve(self, coeffs):
+    def solve(self, coefficients):
         """
         Основной метод, который должен быть реализован в каждом решателе.
         Принимает список коэффициентов [a, b, c, ...].

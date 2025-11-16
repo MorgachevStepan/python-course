@@ -8,12 +8,12 @@ class SolverFactory:
     """Фабрика для создания объектов-решателей."""
 
     @staticmethod
-    def create_solver(coeffs):
+    def create_solver(coefficients):
         """
         Создает и возвращает экземпляр нужного решателя
         в зависимости от количества коэффициентов.
         """
-        degree = len(coeffs) - 1
+        degree = len(coefficients) - 1
 
         if degree == 1:
             return LinearSolver()

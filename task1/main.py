@@ -2,20 +2,10 @@ from task1.solver_factory import SolverFactory
 
 
 def main():
-    """Главная функция для взаимодействия с пользователем."""
-    print("Решение уравнений степени N < 5 (1, 2, 3, 4)")
     print("Введите коэффициенты уравнения через пробел (например, для x^2 - 3x + 2 = 0 введите 1 -3 2):")
 
-    try:
-        input_str = input("Коэффициенты: ")
-        coeffs = [float(c) for c in input_str.split()]
-    except ValueError:
-        print("Ошибка: Введите, пожалуйста, числа.")
-        return
-
-    if len(coeffs) < 2:
-        print("Ошибка: Нужно как минимум два коэффициента (для ax + b = 0).")
-        return
+    input_str = input("Коэффициенты: ")
+    coeffs = [float(c) for c in input_str.split()]
 
     first_nonzero_index = 0
     while first_nonzero_index < len(coeffs) and coeffs[first_nonzero_index] == 0:

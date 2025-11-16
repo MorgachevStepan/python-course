@@ -7,8 +7,8 @@ from task1.quadratic_solver import QuadraticSolver
 class CubicSolver(EquationSolver):
     """Решает кубические уравнения вида ax^3 + bx^2 + cx + d = 0."""
 
-    def solve(self, coeffs):
-        a, b, c, d = [complex(coef) for coef in coeffs]
+    def solve(self, coefficients):
+        a, b, c, d = [complex(coef) for coef in coefficients]
 
         B, C, D = b / a, c / a, d / a
 

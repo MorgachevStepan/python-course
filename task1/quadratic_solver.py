@@ -6,8 +6,8 @@ from task1.equation_solver import EquationSolver
 class QuadraticSolver(EquationSolver):
     """Решает квадратные уравнения вида ax^2 + bx + c = 0."""
 
-    def solve(self, coeffs):
-        a, b, c = coeffs
+    def solve(self, coefficients):
+        a, b, c = coefficients
 
         discriminant = b ** 2 - 4 * a * c
 

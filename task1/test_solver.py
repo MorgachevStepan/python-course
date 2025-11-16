@@ -10,11 +10,6 @@ from task1.solver_factory import SolverFactory
 class TestEquationSolvers(unittest.TestCase):
 
     def assertRootsAlmostEqual(self, roots1, roots2, places=7):
-        """
-        Вспомогательный метод для сравнения двух списков корней.
-        Сортирует корни, чтобы порядок не имел значения, и сравнивает
-        комплексные числа с заданной точностью.
-        """
         self.assertEqual(len(roots1), len(roots2))
 
         sorted_roots1 = sorted(roots1, key=lambda x: (x.real, x.imag))
@@ -89,16 +84,16 @@ class TestEquationSolvers(unittest.TestCase):
 
     # --- для фабрики и логики в main ---
     def test_factory_with_leading_zeros(self):
-        coeffs = [0, 0, 1, -3, 2]  # 0x^4 + 0x^3 + x^2 - 3x + 2 = 0
+        coefficients = [0, 0, 1, -3, 2]  # 0x^4 + 0x^3 + x^2 - 3x + 2 = 0
 
-        effective_coeffs = coeffs[2:]  # -> [1, -3, 2]
+        effective_coefficients = coefficients[2:]  # -> [1, -3, 2]
 
         factory = SolverFactory()
-        solver = factory.create_solver(effective_coeffs)
+        solver = factory.create_solver(effective_coefficients)
 
         self.assertIsInstance(solver, QuadraticSolver)
 
-        roots = solver.solve(effective_coeffs)
+        roots = solver.solve(effective_coefficients)
         self.assertRootsAlmostEqual(roots, [1, 2])
 
 

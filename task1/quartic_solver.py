@@ -7,8 +7,8 @@ from task1.equation_solver import EquationSolver
 class QuarticSolver(EquationSolver):
     """Решает уравнения четвертой степени вида ax^4 + bx^3 + cx^2 + dx + e = 0 (метод Феррари)."""
 
-    def solve(self, coeffs):
-        a, b, c, d, e = [complex(c) for c in coeffs]
+    def solve(self, coefficients):
+        a, b, c, d, e = [complex(c) for c in coefficients]
 
         B = b / a
         C = c / a
